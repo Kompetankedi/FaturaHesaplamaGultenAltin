@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Globalization;
 
 namespace FaturaHesaplamaGultenAltin
 {
@@ -17,8 +18,8 @@ namespace FaturaHesaplamaGultenAltin
         public Form1()
         {
             InitializeComponent();
-
         }
+        CultureInfo tr_TR = new CultureInfo("tr-TR");
 
         public double dolaral()
         {
@@ -49,6 +50,12 @@ namespace FaturaHesaplamaGultenAltin
             lblDolar.Text = dolaral().ToString();
             
             
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.tcmb.gov.tr/kurlar/today.xml");
         }
     }
 }
